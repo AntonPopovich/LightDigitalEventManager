@@ -29,13 +29,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/new-event/**").hasRole("ADMIN")
                 .antMatchers("/auth/**", "/error").permitAll()
                 .anyRequest().hasAnyRole("USER", "ADMIN")
-//                .anyRequest().authenticated()
-//                .and()
-//                .formLogin().loginPage("/auth")
-//                .loginProcessingUrl("/process_login")
-//                .defaultSuccessUrl("/auth/welcome")
-//                .failureUrl()
-//
                 .and()
                 .logout()
                 .logoutUrl("/logout")
